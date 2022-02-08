@@ -77,8 +77,15 @@ Millions of developers and companies build, ship, and maintain their software on
 To run the `Final_Report.ipynb` notebook on your own computer you will need to:
 
  1. Read this README.md (check!)
- 3. Download the whole repository 
- 4. Copy your own env.py file into the repository 
+ 2. Download the whole repository 
+ 3. Create your own env.py file and add the following
+ 4. Make a github personal access token.
+    - Go here and generate a personal access token https://github.com/settings/tokens 
+          - You do _not_ need select any scopes, i.e. leave all the checkboxes unchecked
+    - Save it in your env.py file under the variable `github_token`
+    - Add your github username to your env.py file under the variable `github_username`
+
+ 5. Copy your env.py file into the NLP_Project directory 
  8. Run the `Final_Report.ipynb` in a jupyter notebook
 
 <hr style="border:2px solid blue"> </hr>
