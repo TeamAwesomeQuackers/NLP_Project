@@ -25,7 +25,7 @@ Language Predictor. This is a group project where we will be scraping GitHub rep
 
 ## Housekeeping
 
-### Data Dictionary
+### Data Dictionary:
 A list of the variables in the dataframe and their meaning.
 
 |Column_Name|Description|
@@ -35,6 +35,12 @@ A list of the variables in the dataframe and their meaning.
 |||
 |||
 |||
+
+### To Recreate this Project: 
+    - 
+    - 
+    - 
+    - 
 
 ## Project Planning
 
@@ -74,7 +80,6 @@ A list of the variables in the dataframe and their meaning.
     - 
     - 
 
-## To Recreate this Project: 
 
 ## Conclusion and Next Steps
 
