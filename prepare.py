@@ -18,7 +18,7 @@ from nltk.corpus import stopwords
 from time import strftime
 
 # Custom Imports
-import acquire 
+# import acquire 
 
 
 def basic_clean(string):
