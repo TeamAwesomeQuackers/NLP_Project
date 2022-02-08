@@ -1,16 +1,20 @@
-# NLP_Project
+<div align="center">
 
-## About this Project
-#### What Programming Language are People using for their BitCoin Related Repositories on GitHub?
-#### Give me the README, and I'll Predict the Language.
+<img src="Images/github_logo.png" alt="Codeup Logo" title="Codeup Logo" width="225" height="225" align="center"/>      
 
-### Project Goal:
-The goal is to scrape README pages from BitCoin related repositories on GitHub, so that we can predict the language of that repository.
+# README
 
-### Project Desciption: 
-Language Predictor. This is a group project where we will be scraping GitHub repository README files related to BitCoin. Exploring the text in the README will allow us to identify We will then produce a classification model that will be able to predict the programming language of that repository using only the text in the README.
+### by Chloe Whitaker, Jeanette Schulz, Brian Clements, and Paige Guajardo 
+### 11 February 2022
 
-- List of the languages whose detection is supported: 
+
+</div align="center">
+    
+<hr style="border:2px solid blue"> </hr>
+
+# About this Project
+### Github Webscraping and Natural Language Processing
+Millions of developers and companies build, ship, and maintain their software on GitHub— the largest and most advanced development platform in the world. As Codeup's new up-and-coming Data Scientists, we will be using GitHub's platform to practice both our Web-Scraping skills and our Natural Language Processing (NLP) skills. With a focus on repositories that are studying bitcoin, our goal is to predict the programming language used in a repository based solely on the README.md file provided. By exploring the text provided in the README, we hope to identify key words that will allow us to identify which programming language(s) were used. Then we will teach these to our classification model so that it will predict the programming language of any future repositories we show it. For now, the list of languages whose detection is supported is as follows:
     - JavaScript
     - Python
     - Go
@@ -21,70 +25,70 @@ Language Predictor. This is a group project where we will be scraping GitHub rep
     - PHP
     - C#
 
-### Initial Hypotheses/Questions:
 
-## Housekeeping
+<hr style="border:2px solid blue"> </hr>
 
-### Data Dictionary:
-A list of the variables in the dataframe and their meaning.
+# Project Planning
+## Plan -> Acquire -> Prepare -> Explore -> Model & Evaluate -> Deliver
 
-|Column_Name|Description|
-|-----------|-----------|
-|||
-|||
-|||
-|||
-|||
+<b>Planning:</b>  
+- Make sure we have access to GitHub webscraping (GitHub prefers the use of thier API)
+- Create a repository to save all our work
 
-### To Recreate this Project: 
-    - 
-    - 
-    - 
-    - 
+<b>Acquisition </b>  
+- Collect the data through webscraping GitHub's API 
+- Create an `acquire.py` file to make future acquisition easier
 
-## Project Planning
+<b>Preparation</b>  
+- Clean the acquired data
+- Create a `prepare.py` file to make future data cleaning easier
+- Organize our repository for easy navigation
+  - Images directory to hold all photos used
+  - Workbook directory to hold all work done
+  - Write a README file
 
-    Planning
-    - 
-    - 
-    - 
-    - 
+<b>Exploration and Pre-processing</b>  
+- Explore data to find key words used in the README files 
+- Summarize takeaways and conclusions
 
-    Acquisition
-    - 
-    - 
-    - 
-    - 
+<b>Modeling</b>  
+- Create a Classification model that will predict the programming language used in a repository, based on the repositories README text.
 
-    Preparation
-    - 
-    - 
-    - 
-    - 
+<b>Deliver</b>  
+- A `Final_Report.ipynb` to explain our findings and results.
+- A 5 minute presentation via Google slides 
 
-    Eploration
-    - 
-    - 
-    - 
-    - 
+<hr style="border:2px solid blue"> </hr>
 
-    Modeling
-    - 
-    - 
-    - 
-    - 
+# Data Dictionary
 
-    Delivery
-    - 
-    - 
-    - 
-    - 
+| Feature                    | Datatype               | Description                                                           |
+|:---------------------------|:-----------------------|:----------------------------------------------------------------------|
+| feature_name                       | 847330 non-null: object  | feature described here             |
+| feature_name                       | 847330 non-null: object  | feature described here             |
+| feature_name                       | 847330 non-null: object  | feature described here             |
+| feature_name                       | 847330 non-null: object  | feature described here             |
+| feature_name                       | 847330 non-null: object  | feature described here             |
 
+<hr style="border:2px solid blue"> </hr>
 
-## Conclusion and Next Steps
+# Steps to Reproduce
 
-### Conclusion: 
+To run the `Final_Report.ipynb` notebook on your own computer you will need to:
 
-### Next Steps: 
+ 1. Read this README.md (check!)
+ 3. Download the whole repository 
+ 4. Copy your own env.py file into the repository 
+ 8. Run the `Final_Report.ipynb` in a jupyter notebook
+
+<hr style="border:2px solid blue"> </hr>
 
 
+# Questions we hope to answer for this Project:
+
+1. Never gonna give you up
+2. Never gonna let you down
+3. Never gonna run around and desert you
+4. Never gonna make you cry
+5. Never gonna say goodbye
+6. Never gonna tell a lie and hurt you
