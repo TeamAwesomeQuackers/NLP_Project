@@ -36,41 +36,41 @@ A list of the variables in the dataframe and their meaning.
 
 ## Project Planning
 
-Planning
-- 
-- 
-- 
-- 
+    Planning
+    - 
+    - 
+    - 
+    - 
 
-Acquisition
-- 
-- 
-- 
-- 
+    Acquisition
+    - 
+    - 
+    - 
+    - 
 
-Preparation
-- 
-- 
-- 
-- 
+    Preparation
+    - 
+    - 
+    - 
+    - 
 
-Eploration
-- 
-- 
-- 
-- 
+    Eploration
+    - 
+    - 
+    - 
+    - 
 
-Modeling
-- 
-- 
-- 
-- 
+    Modeling
+    - 
+    - 
+    - 
+    - 
 
-Delivery
-- 
-- 
-- 
-- 
+    Delivery
+    - 
+    - 
+    - 
+    - 
 
 ## To Recreate this Project: 
 
