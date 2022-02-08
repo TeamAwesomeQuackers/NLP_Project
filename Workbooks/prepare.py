@@ -23,18 +23,22 @@ import acquire
 
 def basic_clean(string):
     '''
-    This function takes in a string and
-    returns the string normalized.
+    This function:
+    takes in a string,
+    returns the string normalized
     '''
-    string = unicodedata.normalize('NFKD', string)             .encode('ascii', 'ignore')             .decode('utf-8', 'ignore')
+    string = unicodedata.normalize('NFKD', string)\
+             .encode('ascii', 'ignore')\
+             .decode('utf-8', 'ignore')
     string = re.sub(r'[^\w\s]', '', string).lower()
     return string
 
 
 def tokenize(string):
     '''
-    This function takes in a string and
-    returns a tokenized string.
+    This function:
+    takes in a string,
+    returns a tokenized string
     '''
     # Create tokenizer.
     tokenizer = nltk.tokenize.ToktokTokenizer()
@@ -47,8 +51,9 @@ def tokenize(string):
 
 def stem(string):
     '''
-    This function takes in a string and
-    returns a string with words stemmed.
+    This function:
+    takes in a string,
+    returns a string with words stemmed
     '''
     # Create porter stemmer.
     ps = nltk.porter.PorterStemmer()
@@ -64,8 +69,9 @@ def stem(string):
 
 def lemmatize(string):
     '''
-    This function takes in string for and
-    returns a string with words lemmatized.
+    This function:
+    takes in string,
+    returns a string with words lemmatized
     '''
     # Create the lemmatizer.
     wnl = nltk.stem.WordNetLemmatizer()
@@ -81,8 +87,10 @@ def lemmatize(string):
 
 def remove_stopwords(string, extra_words = [], exclude_words = []):
     '''
-    This function takes in a string, optional extra_words and exclude_words parameters
-    with default empty lists and returns a string.
+    This function:
+    takes in a string, 
+    takes in optional extra_words and exclude_words parameters with default empty lists,
+    returns a string
     '''
     # Create stopword_list.
     stopword_list = stopwords.words('english')
@@ -104,12 +112,14 @@ def remove_stopwords(string, extra_words = [], exclude_words = []):
     
     return string_without_stopwords
 
-def prep_article_data(df, column, extra_words=[], exclude_words=[]):
+def prep_readme_data(df, column, extra_words=[], exclude_words=[]):
     '''
-    This function take in a df and the string name for a text column with 
-    option to pass lists for extra_words and exclude_words and
-    returns a df with the text article title, original text, stemmed text,
-    lemmatized text, cleaned, tokenized, & lemmatized text with stopwords removed.
+    This function:
+    takes in a df and the string name for a text column, 
+    takes in option to pass lists for extra_words and exclude_words,
+    cleans, tokenizes, and lemmatizes text with stopwords removed,
+    returns a df with the readme contents, clean readme contents, stemmed readme contents,
+    lemmatized readme contents
     '''
     df['clean'] = df[column].apply(basic_clean)\
                             .apply(tokenize)\
@@ -136,7 +146,7 @@ def prep_article_data(df, column, extra_words=[], exclude_words=[]):
 
 
 # to run:
-# prep_article_data(df, 'readme_contents', extra_words = ['ha'], exclude_words = ['no']).head()
+# prep_readme_data(df, 'readme_contents', extra_words = [''], exclude_words = ['']).head()
 
 
 
