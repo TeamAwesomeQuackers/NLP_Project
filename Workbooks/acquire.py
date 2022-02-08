@@ -14,8 +14,11 @@ import os
 import json
 from typing import Dict, List, Optional, Union, cast
 import requests
-
+from bs4 import BeautifulSoup
+import time
 from env import github_token, github_username
+import pandas as pd
+import numpy as np
 
 # TODO: Make a github personal access token.
 #     1. Go here and generate a personal access token https://github.com/settings/tokens
@@ -24,98 +27,25 @@ from env import github_token, github_username
 # TODO: Add your github username to your env.py file under the variable `github_username`
 # TODO: Add more repositories to the `REPOS` list below.
 
-REPOS = [
-'bitcoin/bitcoin',
-'bitcoinbook/bitcoinbook',
-'bitcoinj/bitcoinj',
-'bitcoin/bips',
-'bitcoinjs/bitcoinjs-lib',
-'spesmilo/electrum',
-'bitcoin-wallet/bitcoin-wallet',
-'etotheipi/BitcoinArmory',
-'bitcoin-dot-org/Bitcoin.org',
-'jgarzik/cpuminer',
-'bitcoin/bitcoin',
-'bitcoinbook/bitcoinbook',
-'bitcoinj/bitcoinj',
-'bitcoin/bips',
-'bitcoinjs/bitcoinjs-lib',
-'spesmilo/electrum',
-'bitcoin-wallet/bitcoin-wallet',
-'etotheipi/BitcoinArmory',
-'bitcoin-dot-org/Bitcoin.org',
-'jgarzik/cpuminer',
-'bitcoin/bitcoin',
-'bitcoinbook/bitcoinbook',
-'bitcoinj/bitcoinj',
-'bitcoin/bips',
-'bitcoinjs/bitcoinjs-lib',
-'spesmilo/electrum',
-'bitcoin-wallet/bitcoin-wallet',
-'etotheipi/BitcoinArmory',
-'bitcoin-dot-org/Bitcoin.org',
-'jgarzik/cpuminer',
-'bitcoin/bitcoin',
-'bitcoinbook/bitcoinbook',
-'bitcoinj/bitcoinj',
-'bitcoin/bips',
-'bitcoinjs/bitcoinjs-lib',
-'spesmilo/electrum',
-'bitcoin-wallet/bitcoin-wallet',
-'etotheipi/BitcoinArmory',
-'bitcoin-dot-org/Bitcoin.org',
-'jgarzik/cpuminer',
-'bitcoin/bitcoin',
-'bitcoinbook/bitcoinbook',
-'bitcoinj/bitcoinj',
-'bitcoin/bips',
-'bitcoinjs/bitcoinjs-lib',
-'spesmilo/electrum',
-'bitcoin-wallet/bitcoin-wallet',
-'etotheipi/BitcoinArmory',
-'bitcoin-dot-org/Bitcoin.org',
-'jgarzik/cpuminer',
-'bitcoin/bitcoin',
-'bitcoinbook/bitcoinbook',
-'bitcoinj/bitcoinj',
-'bitcoin/bips',
-'bitcoinjs/bitcoinjs-lib',
-'spesmilo/electrum',
-'bitcoin-wallet/bitcoin-wallet',
-'etotheipi/BitcoinArmory',
-'bitcoin-dot-org/Bitcoin.org',
-'jgarzik/cpuminer',
-'bitcoin/bitcoin',
-'bitcoinbook/bitcoinbook',
-'bitcoinj/bitcoinj',
-'bitcoin/bips',
-'bitcoinjs/bitcoinjs-lib',
-'spesmilo/electrum',
-'bitcoin-wallet/bitcoin-wallet',
-'etotheipi/BitcoinArmory',
-'bitcoin-dot-org/Bitcoin.org',
-'jgarzik/cpuminer',
-'bitcoin/bitcoin',
-'bitcoinbook/bitcoinbook',
-'bitcoinj/bitcoinj',
-'bitcoin/bips',
-'bitcoinjs/bitcoinjs-lib',
-'spesmilo/electrum',
-'bitcoin-wallet/bitcoin-wallet',
-'etotheipi/BitcoinArmory',
-'bitcoin-dot-org/Bitcoin.org',
-'jgarzik/cpuminer',
-'bitcoin/bitcoin',
-'bitcoinbook/bitcoinbook',
-'bitcoinj/bitcoinj',
-'bitcoin/bips',
-'bitcoinjs/bitcoinjs-lib',
-'spesmilo/electrum',
-'bitcoin-wallet/bitcoin-wallet',
-'etotheipi/BitcoinArmory',
-'bitcoin-dot-org/Bitcoin.org',
-'jgarzik/cpuminer'
-]
+
+    
+    
+def get_extensions():
+    extension_list = []
+    for i in range(1,101):
+        response = requests.get('https://github.com/search?p={1}&q=bitcoin&type=Repositories', headers={'user-agent': 'DS Student'})
+        soup = BeautifulSoup(response.text, features="lxml")
+        repos = soup.find_all('div', class_ = 'f4 text-normal')
+        for repo in repos:
+            time.sleep(.00001)
+            extension = repo.a.attrs['href']
+            extension_list.append(extension)
+    extension_list = [i[1:] for i in extension_list]
+    return extension_list
+
+
+REPOS = get_extensions()
+
 
 headers = {"Authorization": f"token {github_token}", "User-Agent": github_username}
 
@@ -201,3 +131,29 @@ def scrape_github_data() -> List[Dict[str, str]]:
 if __name__ == "__main__":
     data = scrape_github_data()
     json.dump(data, open("data.json", "w"), indent=1)
+
+def make_json(cached=False):
+    '''
+    Function that extracts the title, date_published, and content of every blog post on the Codeup
+    blot webpage and returns them in a pandas DataFrame
+    '''
+    # define a file that the function can look for in case of caching
+    filename = 'repo_readmes.json'
+    # if a cached json of this name exists, the function reads it directly
+    # (unless the caching argument is turned to false)
+    if cached==True:
+        # checking to see that a cached file actually exists in the directory
+        if os.path.isfile(filename):
+            # directly read and return the json if it exists
+            return pd.read_json(filename)    
+        # if cached is set to true, but no file exists in the directory, return a print statement
+        # to the effect, and halt the function
+        else:
+            return print("No cached file exists in this directory, change the 'cached' argument")
+    # if the file does not exist or caching is defined as 'False', build the dataframe from 
+    # web scraping of the webpage
+    else:
+        df = pd.DataFrame(scrape_github_data(),columns=['repo','language','readme_contents'])
+        # write the resulting DF to json format
+        df.to_json('repo_readmes.json')
+    return df
