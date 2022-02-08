@@ -1,6 +1,8 @@
 # NLP_Project
 
 ## About this Project
+#### What Programming Language are People using for their BitCoin Related Repositories on GitHub?
+#### Give me the README, and I'll Predict the Language.
 
 ### Project Goal:
 The goal is to scrape README pages from BitCoin related repositories on GitHub, so that we can predict the language of that repository.
@@ -19,7 +21,7 @@ Language Predictor. This is a group project where we will be scraping GitHub rep
     - PHP
     - C#
 
-### Initial Hypotheses/Questions
+### Initial Hypotheses/Questions:
 
 ## Housekeeping
 
