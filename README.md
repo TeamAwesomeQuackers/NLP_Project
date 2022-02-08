@@ -86,9 +86,7 @@ To run the `Final_Report.ipynb` notebook on your own computer you will need to:
 
 # Questions we hope to answer for this Project:
 
-1. Never gonna give you up
-2. Never gonna let you down
-3. Never gonna run around and desert you
-4. Never gonna make you cry
-5. Never gonna say goodbye
-6. Never gonna tell a lie and hurt you
+1. What are the most common words in READMEs?
+2. What does the distribution of IDF's look like for the most common words?
+3. Does the length of the README vary by programming language?
+4. Do different programming languages use a different number of unique words?
