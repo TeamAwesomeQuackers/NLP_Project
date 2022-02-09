@@ -142,7 +142,7 @@ def prep_readme_data(df, column, extra_words=[], exclude_words=[]):
                                    extra_words=extra_words, 
                                    exclude_words=exclude_words)
     
-    return df[['readme_contents', column,'clean', 'stemmed', 'lemmatized']]
+    return df#[['readme_contents', column,'clean', 'stemmed', 'lemmatized']]
 
 
 
