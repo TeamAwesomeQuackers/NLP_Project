@@ -32,7 +32,7 @@ import numpy as np
     
 def get_extensions():
     extension_list = []
-    for i in range(1,10):
+    for i in range(1,101):
         response = requests.get('https://github.com/search?p='+str(i)+'&q=bitcoin&type=Repositories', headers={'user-agent': 'DS Student'})
         soup = BeautifulSoup(response.text)
         repos = soup.find_all('div', class_ = 'f4 text-normal')
