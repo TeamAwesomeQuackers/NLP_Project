@@ -18,7 +18,8 @@ from nltk.corpus import stopwords
 from time import strftime
 
 # Custom Imports
-import acquire 
+# commenting out acquire for the time being, since the runtime is long to import it and there is a json to work from
+# import acquire 
 
 
 def basic_clean(string):
