@@ -32,19 +32,100 @@ import numpy as np
     
 def get_extensions():
     extension_list = []
-    for i in range(1,101):
+    for i in range(20,27):
         response = requests.get('https://github.com/search?p='+str(i)+'&q=bitcoin&type=Repositories', headers={'user-agent': 'DS Student'})
         soup = BeautifulSoup(response.text)
         repos = soup.find_all('div', class_ = 'f4 text-normal')
         for repo in repos:
-            time.sleep(.000001)
+            time.sleep(1)
             extension = repo.a.attrs['href']
             extension_list.append(extension)
     extension_list = [n[1:] for n in extension_list]
     return extension_list
 
 
-REPOS = get_extensions()
+REPOS = [
+'bitcoin/bitcoin',
+'bitcoinbook/bitcoinbook',
+'bitcoinj/bitcoinj',
+'bitcoin/bips',
+'bitcoinjs/bitcoinjs-lib',
+'spesmilo/electrum',
+'bitcoin-wallet/bitcoin-wallet',
+'etotheipi/BitcoinArmory',
+'bitcoin-dot-org/Bitcoin.org',
+'jgarzik/cpuminer',
+'BitcoinExchangeFH/BitcoinExchangeFH',
+'maxme/bitcoin-arbitrage',
+'yenom/BitcoinKit',
+'BitcoinUnlimited/BitcoinUnlimited',
+'Bitcoin-ABC/bitcoin-abc',
+'bisq-network/bisq',
+'mobnetic/BitcoinChecker',
+'bitcoin-abe/bitcoin-abe',
+'petertodd/python-bitcoinlib',
+'sipa/bitcoin-seeder',
+'imfly/bitcoin-on-nodejs',
+'PiSimo/BitcoinForecast',
+'trottier/original-bitcoin',
+'Bit-Wasp/bitcoin-php',
+'rust-bitcoin/rust-bitcoin',
+'lian/bitcoin-ruby',
+'bitcoin-core/bitcoincore.org',
+'btcpayserver/btcpayserver',
+'GammaGao/bitcoinwhitepaper',
+'tianmingyun/MasterBitcoin2CN',
+'kylemanna/docker-bitcoind',
+'pointbiz/bitaddress.org',
+'BTCPrivate/BitcoinPrivate-legacy',
+'jgarzik/python-bitcoinrpc',
+'pooler/cpuminer',
+'HelloZeroNet/ZeroNet',
+'progranism/Open-Source-FPGA-Bitcoin-Miner',
+'cryptean/bitcoinlib',
+'oleganza/CoreBitcoin',
+'xiaolai/bitcoin-whitepaper-chinese-translation',
+'zquestz/bitcoincash',
+'ruimarinho/bitcoin-core',
+'ofek/bit',
+'dooglus/intersango',
+'Diablo-D3/DiabloMiner',
+'mycelium-com/wallet-android',
+'freewil/bitcoin-testnet-box',
+'butor/blackbird',
+'benjyz/bitcoinArchive',
+'znort987/blockparser',
+'aceat64/EasyBitcoin-PHP',
+'Bitlits/Bitcoin-Casino',
+'Blockstream/esplora',
+'eveybcd/BitcoinDiamond',
+'kingrock/BitcoinExchange',
+'siminchen/bitcoinIDE',
+'phishman3579/Bitcoin',
+'thallium205/BitcoinVisualizer',
+'brandonrobertz/BitcoinTradingAlgorithmToolkit',
+'ccxt/ccxt',
+'libbitcoin/libbitcoin-explorer',
+'LedgerHQ/app-bitcoin',
+'SegwitB2X/bitcoin2x',
+'llSourcell/bitcoin_prediction',
+'haskoin/haskoin-core',
+'alecalve/python-bitcoin-blockchain-parser',
+'blinktrade/bitex',
+'libbitcoin/libbitcoin-system',
+'blockchain/api-v1-client-php',
+'untitled-dice/untitled-dice.github.io',
+'philipperemy/deep-learning-bitcoin',
+'fkysly/bitcoin0.1.0',
+'dryphp/bitcoin.php',
+'ruimarinho/docker-bitcoin-core',
+'michaelliao/cryptocurrency',
+'bitcoin-core/HWI',
+'londonappbrewery/bitcoin-ticker-flutter',
+'chaincodelabs/bitcoin-curriculum',
+'richox/okcoin-leeks-reaper',
+'bcoin-org/bcoin'
+]
 
 
 headers = {"Authorization": f"token {github_token}", "User-Agent": github_username}

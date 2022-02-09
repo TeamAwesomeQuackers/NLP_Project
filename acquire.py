@@ -32,12 +32,12 @@ import numpy as np
     
 def get_extensions():
     extension_list = []
-    for i in range(1,101):
+    for i in range(1,15):
         response = requests.get('https://github.com/search?p='+str(i)+'&q=bitcoin&type=Repositories', headers={'user-agent': 'DS Student'})
         soup = BeautifulSoup(response.text)
         repos = soup.find_all('div', class_ = 'f4 text-normal')
         for repo in repos:
-            time.sleep(.000001)
+            time.sleep(1)
             extension = repo.a.attrs['href']
             extension_list.append(extension)
     extension_list = [n[1:] for n in extension_list]
