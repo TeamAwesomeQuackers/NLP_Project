@@ -41,6 +41,10 @@ Millions of developers and companies build, ship, and maintain their software on
 
 <b>Preparation</b>  
 - Clean the acquired data
+  - Remove special characters
+  - Tokenize and Lemmatize the words of each corpus
+  - Drop a very few duplicates and nulls that existed
+  - Redefine any language that had few observations as "other"
 - Create a `prepare.py` file to make future data cleaning easier
 - Organize our repository for easy navigation
   - Images directory to hold all photos used
