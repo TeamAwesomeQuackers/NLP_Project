@@ -14,17 +14,15 @@
 
 # About this Project
 ### Github Webscraping and Natural Language Processing
-Millions of developers and companies build, ship, and maintain their software on GitHub— the largest and most advanced development platform in the world. As Codeup's new up-and-coming Data Scientists, we will be using GitHub's platform to practice both our Web-Scraping skills and our Natural Language Processing (NLP) skills. With a focus on repositories that are studying bitcoin, our goal is to predict the programming language used in a repository based solely on the README.md file provided. By exploring the text provided in the README, we hope to identify key words that will allow us to identify which programming language(s) were used. Then we will teach these to our classification model so that it will predict the programming language of any future repositories we show it. For now, the list of languages whose detection is supported is as follows:
-    - JavaScript
-    - Python
-    - Go
-    - C++
-    - Java
-    - TypeScript
-    - HTML
-    - PHP
-    - C#
+Millions of developers and companies build, ship, and maintain their software on GitHub— the largest and most advanced development platform in the world. As Codeup's new up-and-coming Data Scientists, we will be using GitHub's platform to practice both our Web-Scraping skills and our Natural Language Processing (NLP) skills. With a focus on repositories that are studying bitcoin, our goal is to predict the programming language used in a repository based solely on the README.md file provided. By exploring the text provided in the README, we hope to identify key words that will allow us to identify which programming language(s) were used. Then we will teach these to our classification model so that it will predict the programming language of any future repositories we show it. The list of languages we will try to predict are:  
 
+- JavaScript  
+- Python   
+- C++  
+- PHP  
+- C  
+- Java  
+- Other  
 
 <hr style="border:2px solid blue"> </hr>
 
@@ -68,11 +66,9 @@ Millions of developers and companies build, ship, and maintain their software on
 
 | Feature                    | Datatype               | Description                                                           |
 |:---------------------------|:-----------------------|:----------------------------------------------------------------------|
-| feature_name                       | 847330 non-null: object  | feature described here             |
-| feature_name                       | 847330 non-null: object  | feature described here             |
-| feature_name                       | 847330 non-null: object  | feature described here             |
-| feature_name                       | 847330 non-null: object  | feature described here             |
-| feature_name                       | 847330 non-null: object  | feature described here             |
+| repo                       | 166 non-null: object   | github repo name             |
+| language                   | 166 non-null: object   | repo programming language            |
+| readme_contents            | 166 non-null: object   | contents of the repo's readme             |
 
 <hr style="border:2px solid blue"> </hr>
 
@@ -95,9 +91,11 @@ To run the `Final_Report.ipynb` notebook on your own computer you will need to:
 <hr style="border:2px solid blue"> </hr>
 
 
-# Questions we hope to answer for this Project:
+# Some Questions We Hope to Answer for this Project:
 
-1. What are the most common words in READMEs?
-2. What does the distribution of IDF's look like for the most common words?
-3. Does the length of the README vary by programming language?
-4. Do different programming languages use a different number of unique words?
+1. What are the most frequently occuring words in the READMEs?
+2. What are the least frequently occurring words in the READMEs?
+3. How many repos have their programming language mentioned in the README text?
+4. What does the distribution of IDF's look like for the most common words?
+5. Does the length of the README vary by programming language?
+6. Do different programming languages use a different number of unique words?
