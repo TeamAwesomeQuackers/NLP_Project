@@ -97,12 +97,15 @@ To run the `Final_Report.ipynb` notebook on your own computer you will need to:
 
 <hr style="border:2px solid blue"> </hr>
 
+# Initial Hypothesis
+
+Are intial thought is that a lot of the READMEs contain unique words that could help predict the language of the repository. 
 
 # Some Questions We Hope to Answer for this Project:
 
-1. What are the most frequently occuring words in the READMEs?
-2. What are the least frequently occurring words in the READMEs?
-3. How many repos have their programming language mentioned in the README text?
-4. What does the distribution of IDF's look like for the most common words?
-5. Does the length of the README vary by programming language?
+1. What are the most frequently occuring words in the readmes?
+2. Are there words that uniquely identify with a certain language's repos?
+3. What are the least frequently occuring words in the readmes?
+4. Does the length of the README vary by programming language?
+5. How many repos have their programming language mentioned in the README text?
 6. Do different programming languages use a different number of unique words?
