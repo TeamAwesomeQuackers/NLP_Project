@@ -70,6 +70,13 @@ Millions of developers and companies build, ship, and maintain their software on
 | language                   | 166 non-null: object   | repo programming language            |
 | readme_contents            | 166 non-null: object   | contents of the repo's readme             |
 
+Many variables were also defined:
+Splits, along the lines of TRAIN, VALIDATE, TEST, X_splits, and y_splits for each
+JavaScript_words (etc. according to language) : the words of all corpii that belong to that language
+JavaScript_freq (etc. according to language) : the frequency of any given word, by language used to build the following
+word_counts: dataframe that reports the number of occurences of any given lemmatized word, across all languages
+length_list: a list of the lengths of all words belonging to any given language
+
 <hr style="border:2px solid blue"> </hr>
 
 # Steps to Reproduce
