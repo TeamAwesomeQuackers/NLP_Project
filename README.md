@@ -99,7 +99,7 @@ To run the `Final_Report.ipynb` notebook on your own computer you will need to:
 
 # Initial Hypothesis
 
-Are intial thought is that a lot of the READMEs contain unique words that could help predict the language of the repository. 
+Our intial thought is that a lot of the READMEs contain unique words that could help predict the language of the repository. 
 
 # Some Questions We Hope to Answer for this Project:
 
