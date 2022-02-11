@@ -134,7 +134,7 @@ def github_logo():
     This function: 
     returns a github logo word cloud'''
     plt.figure(figsize=(16,9))
-    mask = np.array(Image.open("octocat_logo.png"))
+    mask = np.array(Image.open("Images/octocat_logo.png"))
     wc = WordCloud(background_color="black", width=800, height=400, contour_width=1, contour_color='white',mask=mask)
     # generate word cloud
     wc.generate_from_frequencies(word_counts['all'])
