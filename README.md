@@ -81,7 +81,7 @@ length_list: a list of the lengths of all words belonging to any given language
 
 # Steps to Reproduce
 
-To run the `Final_Report.ipynb` notebook on your own computer you will need to:
+To run the `Final_NLP_Project.ipynb` notebook on your own computer you will need to:
 
  1. Read this README.md (check!)
  2. Download the whole repository 
@@ -93,7 +93,7 @@ To run the `Final_Report.ipynb` notebook on your own computer you will need to:
     - Add your github username to your env.py file under the variable `github_username`
 
  5. Copy your env.py file into the NLP_Project directory 
- 8. Run the `Final_Report.ipynb` in a jupyter notebook
+ 6. Run the `Final_NLP_Project.ipynb` in a jupyter notebook
 
 <hr style="border:2px solid blue"> </hr>
 
