@@ -52,26 +52,25 @@ warnings.filterwarnings("ignore")
 df = pd.read_json('repo_readmes.json')
 
 
-# In[3]:
+
 
 
 # Save the names of the top 5 programming languages, and change the rest to 'Other'
 df['language'] = df.language.apply(wrangle.common_language)
 
 
-# In[4]:
 
 
 df = wrangle.brian_quick_clean(df)
 
 
-# In[5]:
+
 
 
 train, validate, test, X_train, y_train, X_validate, y_validate, X_test, y_test = wrangle.split_repos(df)
 
 
-# In[6]:
+
 
 
 # combine all contents in single string by language
@@ -86,7 +85,6 @@ other_words = (' '.join(train[train.language == 'Other'].lemmatized))
 all_words = (' '.join(train.lemmatized))
 
 
-# In[7]:
 
 
 # remove_stopwords
@@ -101,7 +99,7 @@ other_words = wrangle.remove_stopwords(str(other_words))
 all_words = wrangle.remove_stopwords(str(all_words))
 
 
-# In[8]:
+
 
 
 # represent contents as word frequencies
@@ -116,7 +114,7 @@ other_freq = pd.Series(other_words.split()).value_counts()
 all_freq = pd.Series(all_words.split()).value_counts()
 
 
-# In[9]:
+
 
 
 # concat all frequencies together into a dataframe
@@ -126,20 +124,27 @@ word_counts.columns = ['javascript', 'c_plus_plus', 'c', 'python', 'java', 'php'
 # word_counts.head()
 
 
-# In[13]:
+
 
 
 def github_logo():
     ''' 
     This function: 
+    takes in an image file using Image from PIL,
+    uses WordCloud from worldcloud, 
     returns a github logo word cloud'''
+    
+    # plot figure
     plt.figure(figsize=(16,9))
-    mask = np.array(Image.open("Images/octocat_logo.png"))
+    
+    # get image file and smecipy wordcloud parameters
+    mask = np.array(Image.open("octocat_logo.png"))
     wc = WordCloud(background_color="black", width=800, height=400, contour_width=1, contour_color='white',mask=mask)
-    # generate word cloud
+    
+    # generates word cloud
     wc.generate_from_frequencies(word_counts['all'])
 
-    # show
+    # shows image 
     plt.imshow(wc, interpolation="bilinear")
     plt.axis("off")
     plt.show()
@@ -147,13 +152,11 @@ def github_logo():
     return 
 
 
-# In[15]:
-
 
 # github_logo()
 
 
-# In[ ]:
+
 
 
 
