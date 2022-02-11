@@ -138,7 +138,7 @@ def github_logo():
     plt.figure(figsize=(16,9))
     
     # get image file and smecipy wordcloud parameters
-    mask = np.array(Image.open("octocat_logo.png"))
+    mask = np.array(Image.open("Images/octocat_logo.png"))
     wc = WordCloud(background_color="black", width=800, height=400, contour_width=1, contour_color='white',mask=mask)
     
     # generates word cloud
