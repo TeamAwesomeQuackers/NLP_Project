@@ -108,4 +108,3 @@ Our intial thought is that a lot of the READMEs contain unique words that could 
 3. What are the least frequently occuring words in the readmes?
 4. Does the length of the README vary by programming language?
 5. How many repos have their programming language mentioned in the README text?
-6. Do different programming languages use a different number of unique words?
